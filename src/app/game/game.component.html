@@ -1,0 +1,47 @@
+<div class="title">
+  <p>
+    Select up to 3 measures
+  </p>
+</div>
+<br>
+<br>
+<br>
+<div class="card" *ngFor="let measure of measure_list">
+  <div class="container" (click)="manageMeasure(measure)" *ngIf="!measures.includes(measure.identifier)">
+    <h4>{{ measure.identifier }} - {{ measure.name }}</h4>
+    <p>{{ measure.cost }}</p>
+  </div>
+  <div class="container" (click)="manageMeasure(measure)" *ngIf="measures.includes(measure.identifier)" style="background-color: #e95031 !important; border-radius: 30px;">
+    <h4>{{ measure.identifier }} - {{ measure.name }}</h4>
+    <p>{{ measure.cost }}</p>
+  </div>
+  <hr>
+</div>
+
+<div class="submit">
+  <p class="cost" *ngIf="cost <= 100">
+    Cost: {{ cost }}
+  </p>
+  <p class="cost-exceed" *ngIf="cost > 100">
+    Cost: {{ cost }}
+  </p>
+  <button (click)="onSubmit()" *ngIf="cost <= 100">Submit</button>
+  <button *ngIf="cost > 100" style="background-color: #d9d900; border-color: #d9d900">Submit</button>
+</div>
+
+<div *ngIf="submitted === true" class="score-page">
+  <p class="score">
+    {{ score }}
+  </p>
+  <button (click)="playAgain()" class="play-again">Play again</button>
+</div>
+<img src="assets/pictures/mushroom.jpg" alt="mushroom" class="mushroom">
+<img src="assets/pictures/goomba.jpg" alt="goomba" class="goomba">
+<img src="assets/pictures/star.jpg" alt="star" class="star">
+<img src="assets/pictures/heart.jpg" alt="heart" class="heart">
+<img src="assets/pictures/boo.jpg" alt="boo" class="boo">
+<img src="assets/pictures/poire.jpg" alt="poire" class="poire">
+<img src="assets/pictures/pacman.jpg" alt="pacman" class="pacman">
+<img src="assets/pictures/flappy.jpg" alt="flappy" class="flappy">
+<img src="assets/pictures/hamburger.jpg" alt="hamburger" class="hamburger">
+<img src="assets/pictures/kirby.jpg" alt="kirby" class="kirby">
