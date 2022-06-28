@@ -1,6 +1,10 @@
 {
   "name": "test-technique",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.15.1",
+    "npm": "8.13.1"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
